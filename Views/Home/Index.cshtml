@@ -1,0 +1,27 @@
+﻿@model PruebaTecnica.Models.ViewModel
+
+
+@{
+    ViewData["Title"] = "Promoción Automática";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Promoción Automática</h1>
+    <a asp-action="Index">Ejecutar</a>
+    <div class="text-left" style="margin-top: 20px">
+        <table class="table">
+            @{
+                List<string> _list = ViewData["OutputPromocion"] as List<string>;
+            }
+            @if (_list != null)
+            {
+                foreach (var item in _list)
+                {
+                    <tr >
+                        <td >@item</td>
+                    </tr>
+                }
+            }
+        </table>
+        </div>
+    </div>
